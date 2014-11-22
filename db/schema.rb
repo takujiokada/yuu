@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117122532) do
+ActiveRecord::Schema.define(version: 20141117133206) do
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "howtos", force: true do |t|
+    t.integer  "recipe_id"
+    t.string   "order"
+    t.string   "title"
+    t.text     "desk"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materials", force: true do |t|
+    t.integer  "recipe_id"
+    t.string   "name"
+    t.string   "image"
+    t.string   "volume"
+    t.string   "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipes", force: true do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "desk"
+    t.string   "image_type"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

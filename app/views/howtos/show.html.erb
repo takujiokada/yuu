@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @howto.recipe_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @howto.order %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @howto.title %>
+</p>
+
+<p>
+  <strong>Desk:</strong>
+  <%= @howto.desk %>
+</p>
+
+<%= link_to 'Edit', edit_howto_path(@howto) %> |
+<%= link_to 'Back', howtos_path %>
